@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "editorconfig.editorconfig",
+    "eamodio.gitlens",
+    "jpoissonnier.vscode-styled-components"
+  ]
+}

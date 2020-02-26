@@ -1,25 +1,80 @@
 module.exports = {
-    parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-    extends: [
-        "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-        "airbnb", "airbnb/hooks",
-        "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
-        "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-        "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-    ],
-    parserOptions: {
-        ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-        sourceType: "module" // Allows for the use of imports
+  extends: [
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:eslint-comments/recommended',
+    'plugin:promise/recommended',
+    'plugin:unicorn/recommended',
+    'plugin:prettier/recommended',
+    'prettier/react',
+    'prettier/@typescript-eslint',
+  ],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-    rules: {
-        "no-shadow": "warn",
-        "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/camelcase": "off",
-        "@typescript-eslint/array-type": "off",
-        "@typescript-eslint/no-object-literal-type-assertion": "off"        
-    }
-};
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+      node: {
+        extensions: ['.js', '.jsx', 'ts', '.tsx'],
+      },
+    },
+  },
+  env: {
+    node: true,
+    browser: true,
+    jest: true,
+  },
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+  plugins: [
+    'prettier',
+    '@typescript-eslint',
+    'promise',
+    'unicorn',
+    'eslint-comments',
+    'prefer-arrow',
+    'import',
+  ],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      { allowExpressions: true, allowTypedFunctionExpressions: true },
+    ],
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
+    'import/no-unresolved': 'error',
+    'unicorn/filename-case': [
+      'error',
+      {
+        case: 'kebabCase',
+        ignore: ['^([A-Z])[a-z--]+.tsx$'],
+      },
+    ],
+    'prefer-arrow/prefer-arrow-functions': [
+      'warn',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
+    'react/prefer-stateless-function': 'warn',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+  },
+}
