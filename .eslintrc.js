@@ -43,6 +43,7 @@ module.exports = {
     'import',
   ],
   rules: {
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       { allowExpressions: true, allowTypedFunctionExpressions: true },
