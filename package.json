@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "preinstall": "node scripts/preinstall.js",
+    "hooks:pre-push": "node scripts/git-flow.js",
     "start": "rescripts start",
     "build": "rescripts build",
     "test": "rescripts test"
@@ -62,7 +63,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
-      "pre-push": "node scripts/git-flow.js"
+      "pre-push": "yarn hooks:pre-push"
     }
   },
   "lint-staged": {
