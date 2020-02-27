@@ -10,5 +10,6 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "prettier.disableLanguages": ["typescript", "typescriptreact"]
+  "prettier.disableLanguages": ["typescript", "typescriptreact"],
+  "debug.node.useV3": true
 }

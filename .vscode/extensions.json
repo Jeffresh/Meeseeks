@@ -4,6 +4,7 @@
     "formulahendry.auto-rename-tag",
     "editorconfig.editorconfig",
     "eamodio.gitlens",
-    "jpoissonnier.vscode-styled-components"
+    "jpoissonnier.vscode-styled-components",
+    "ms-vscode.js-debug-nightly"
   ]
 }
