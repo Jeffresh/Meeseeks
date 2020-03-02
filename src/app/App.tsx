@@ -1,8 +1,5 @@
 import { NoSsr } from '@material-ui/core'
-import {
-  StylesProvider,
-  ThemeProvider as MuiThemeProvider,
-} from '@material-ui/core/styles'
+import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Footer } from '~Components/Footer'
