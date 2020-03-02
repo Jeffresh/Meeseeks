@@ -68,6 +68,15 @@ module.exports = {
     ],
     'react/prefer-stateless-function': 'warn',
     'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        whitelist: {
+          args: true,
+          props: true,
+        },
+      },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',
