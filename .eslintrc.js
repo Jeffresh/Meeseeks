@@ -67,6 +67,7 @@ module.exports = {
       },
     ],
     'react/prefer-stateless-function': 'warn',
+    'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
     'import/extensions': [
       'error',
       'ignorePackages',
