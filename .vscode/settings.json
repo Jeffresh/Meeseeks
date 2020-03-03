@@ -1,15 +1,7 @@
 {
-  "editor.formatOnSave": true,
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": false
-  },
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "prettier.disableLanguages": ["typescript", "typescriptreact"],
   "debug.node.useV3": true
 }

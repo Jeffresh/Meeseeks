@@ -6,7 +6,8 @@
       {
         "root": ".",
         "alias": {
-          "~Components": "./src/components"
+          "~Components": "./src/components",
+          "~Types": "./src/types"
         }
       }
     ]

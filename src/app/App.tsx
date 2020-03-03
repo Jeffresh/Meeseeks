@@ -1,4 +1,4 @@
-import { NoSsr } from '@material-ui/core'
+import { CssBaseline, NoSsr } from '@material-ui/core'
 import {
   StylesProvider,
   ThemeProvider as MuiThemeProvider,
@@ -12,16 +12,19 @@ import { theme } from '../theme'
 
 export const App = (): JSX.Element => {
   return (
-    <NoSsr>
-      <StylesProvider injectFirst>
-        <MuiThemeProvider theme={theme}>
-          <ThemeProvider theme={theme}>
-            <Navbar />
-            <Hello />
-            <Footer />
-          </ThemeProvider>
-        </MuiThemeProvider>
-      </StylesProvider>
-    </NoSsr>
+    <>
+      <CssBaseline />
+      <NoSsr>
+        <StylesProvider injectFirst>
+          <MuiThemeProvider theme={theme}>
+            <ThemeProvider theme={theme}>
+              <Navbar />
+              <Hello />
+              <Footer />
+            </ThemeProvider>
+          </MuiThemeProvider>
+        </StylesProvider>
+      </NoSsr>
+    </>
   )
 }

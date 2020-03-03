@@ -14,14 +14,14 @@ module.exports = {
   ],
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
       },
       node: {
-        extensions: ['.js', '.jsx', 'ts', '.tsx'],
+        extensions: ['.js', '.jsx', 'ts', '.tsx', '.d.ts'],
       },
     },
   },
