@@ -77,6 +77,7 @@ module.exports = {
         },
       },
     ],
+    'react/prop-types': 'off', // useless with typescript
     'import/extensions': [
       'error',
       'ignorePackages',

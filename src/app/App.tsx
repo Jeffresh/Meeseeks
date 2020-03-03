@@ -5,9 +5,8 @@ import {
 } from '@material-ui/core/styles'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Footer } from '~Components/Footer'
 import { Hello } from '~Components/Hello'
-import { Navbar } from '~Components/Navbar'
+import { Layout } from '~Components/Layout'
 import { theme } from '../theme'
 
 export const App = (): JSX.Element => {
@@ -18,9 +17,9 @@ export const App = (): JSX.Element => {
         <StylesProvider injectFirst>
           <MuiThemeProvider theme={theme}>
             <ThemeProvider theme={theme}>
-              <Navbar />
-              <Hello />
-              <Footer />
+              <Layout>
+                <Hello />
+              </Layout>
             </ThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
