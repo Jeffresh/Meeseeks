@@ -5,9 +5,10 @@ import {
 } from '@material-ui/core/styles'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Hello } from '~Components/Hello'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Layout } from '~Components/Layout'
 import { theme } from '../theme'
+import { routes } from '../routes'
 
 export const App = (): JSX.Element => {
   return (
@@ -17,9 +18,16 @@ export const App = (): JSX.Element => {
         <StylesProvider injectFirst>
           <MuiThemeProvider theme={theme}>
             <ThemeProvider theme={theme}>
-              <Layout>
-                <Hello />
-              </Layout>
+              <BrowserRouter>
+                <Layout>
+                  <Switch>
+                    {routes.map(props => (
+                      // eslint-disable-next-line react/jsx-props-no-spreading
+                      <Route {...props} />
+                    ))}
+                  </Switch>
+                </Layout>
+              </BrowserRouter>
             </ThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
