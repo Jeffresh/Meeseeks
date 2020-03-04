@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const Hello = (): JSX.Element => {
+export const Home = (): JSX.Element => {
   const classes = useStyles()
 
   return (
