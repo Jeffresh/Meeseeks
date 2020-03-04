@@ -1,4 +1,4 @@
-import { Link, Typography } from '@material-ui/core'
+import { Link as MUILink, Typography } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import InputBase from '@material-ui/core/InputBase'
 import { fade } from '@material-ui/core/styles'
@@ -6,10 +6,15 @@ import Toolbar from '@material-ui/core/Toolbar'
 import { Search } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const menu = ['Character', 'Episodes', 'Planets']
+const menu = [
+  { name: 'Characters', url: '/character' },
+  { name: 'Episodes', url: '/episode' },
+  { name: 'Planets', url: '/planet' },
+]
 
-const MenuItem = styled(Link)`
+const MenuItem = styled(MUILink)`
   margin: ${({ theme }) => theme.spacing(1, 1.5)};
 `
 
@@ -72,8 +77,8 @@ export const Navbar = (): JSX.Element => {
         <nav>
           {menu.map(item => (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <MenuItem variant="button" href="#" color="inherit" key={item}>
-              {item}
+            <MenuItem variant="button" href="#" color="inherit" key={item.name}>
+              <Link to={item.url}> {item.name}</Link>
             </MenuItem>
           ))}
         </nav>
