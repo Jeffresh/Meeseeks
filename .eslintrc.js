@@ -41,8 +41,11 @@ module.exports = {
     'eslint-comments',
     'prefer-arrow',
     'import',
+    'react-hooks',
   ],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'spaced-comment': ['error', 'always', { markers: ['/'] }],
     '@typescript-eslint/explicit-function-return-type': [
       'error',

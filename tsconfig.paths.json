@@ -4,7 +4,8 @@
     "paths": {
       "~Components/*": ["src/components/*"],
       "~Types/*": ["src/types/*"],
-      "~Pages/*": ["src/pages/*"]
+      "~Pages/*": ["src/pages/*"],
+      "~Api": ["src/services/api"]
     }
   }
 }

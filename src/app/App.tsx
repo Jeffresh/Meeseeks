@@ -4,11 +4,11 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from '@material-ui/core/styles'
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Layout } from '~Components/Layout'
-import { theme } from '../theme'
 import { routes } from '../routes'
+import { theme } from '../theme'
 
 export const App = (): JSX.Element => {
   return (
