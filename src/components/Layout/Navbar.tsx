@@ -1,15 +1,21 @@
-import { Link, Typography } from '@material-ui/core'
+import { Link, LinkTypeMap, Typography } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import InputBase from '@material-ui/core/InputBase'
+import { OverridableComponent } from '@material-ui/core/OverridableComponent'
 import { fade } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import { Search } from '@material-ui/icons'
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-const menu = ['Character', 'Episodes', 'Planets']
+const menu = [
+  { name: 'Characters', url: '/character' },
+  { name: 'Episodes', url: '/episode' },
+  { name: 'Planets', url: '/planet' },
+]
 
-const MenuItem = styled(Link)`
+const MenuItem: OverridableComponent<LinkTypeMap> = styled(Link)`
   margin: ${({ theme }) => theme.spacing(1, 1.5)};
 `
 
@@ -72,8 +78,15 @@ export const Navbar = (): JSX.Element => {
         <nav>
           {menu.map(item => (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <MenuItem variant="button" href="#" color="inherit" key={item}>
-              {item}
+            <MenuItem
+              component={RouterLink}
+              to={item.url}
+              variant="button"
+              href="#"
+              color="inherit"
+              key={item.name}
+            >
+              {item.name}
             </MenuItem>
           ))}
         </nav>
