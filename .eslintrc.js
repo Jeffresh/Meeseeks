@@ -91,5 +91,13 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'react/jsx-props-no-spreading': [
+      'warn',
+      {
+        html: 'enforce',
+        custom: 'ignore',
+        explicitSpread: 'enforce',
+      },
+    ],
   },
 }

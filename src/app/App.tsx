@@ -21,9 +21,8 @@ export const App = (): JSX.Element => {
               <BrowserRouter>
                 <Layout>
                   <Switch>
-                    {routes.map(props => (
-                      // eslint-disable-next-line react/jsx-props-no-spreading
-                      <Route {...props} />
+                    {Object.values(routes).map(({ name: _, ...route }) => (
+                      <Route {...route} />
                     ))}
                   </Switch>
                 </Layout>
