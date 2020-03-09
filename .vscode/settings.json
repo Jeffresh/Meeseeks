@@ -3,5 +3,6 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "debug.node.useV3": true
+  "debug.node.useV3": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

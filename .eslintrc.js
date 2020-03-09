@@ -99,5 +99,11 @@ module.exports = {
         explicitSpread: 'enforce',
       },
     ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
 }

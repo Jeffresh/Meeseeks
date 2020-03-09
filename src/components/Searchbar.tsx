@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { TextField } from '@material-ui/core'
 import { grey } from '@material-ui/core/colors'
 import { Clear } from '@material-ui/icons'
@@ -35,7 +34,6 @@ export const Searchbar = <T extends any>({
     })()
   }, [inputValue])
 
-  useEffect(() => {})
   return (
     <Autocomplete
       {...props}

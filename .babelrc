@@ -9,7 +9,8 @@
           "~Components": "./src/components",
           "~Types": "./src/types",
           "~Pages": ".src/pages",
-          "~Api": "./src/services/api"
+          "~Api": "./src/services/api",
+          "~Store": "./src/store"
         }
       }
     ]

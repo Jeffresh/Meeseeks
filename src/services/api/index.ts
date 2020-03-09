@@ -13,7 +13,7 @@ export interface Info {
   prev: string
 }
 
-interface ResultInfo<T> {
+export interface ResultInfo<T> {
   info: Info
   results: T[]
 }
@@ -92,7 +92,7 @@ type EndPointReturn<E extends Character | Location | Episode> = {
   (params?: Filter<E>): AxiosPromise<ResultInfo<E>>
 }
 
-type GetParams<T extends {} = {}> =
+export type GetParams<T extends {} = {}> =
   | string
   | number
   | string[]
@@ -101,7 +101,10 @@ type GetParams<T extends {} = {}> =
   | undefined
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const get = (endpoint: 'character' | 'location' | 'episode', args: GetParams) =>
+export const get = (
+  endpoint: 'character' | 'location' | 'episode',
+  args: GetParams,
+) =>
   typeof args === 'number' || typeof args === 'string' || Array.isArray(args)
     ? api(`${endpoint}/${args}`)
     : api(endpoint, { params: args })
